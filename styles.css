@@ -1,7 +1,8 @@
 /* CSS BY GRACIE JACKSON */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,9 +64,12 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
+body {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-left: auto;
+}
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
@@ -73,8 +77,123 @@ table {
     margin: 0 auto;
 }
 
+*{
+    font-family: var(--font);
+}
+
+h1{
+    color: var(--blue);
+    font-family: var(--font);
+    font-size: 1.75rem;
+    font-weight: bold;
+
+}
+
+/*Header Hamburger Icon*/
+nav {
+    background-color: var(--black);
+    margin-top: 20px;
+    overflow: auto;
+}
+
+nav ul{
+    width: 100%;
+    margin:0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+nav h2{
+    visibility: hidden;
+    height: 1px;
+}
+nav li a{
+    display: block;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+}
+
+nav a:hover, nav input:hover{
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+nav label{
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+    float: right;
+}
+
+label span{
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+
+label span:before, label span:after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before{
+    top: .75rem;
+}
+label span:after{
+    top: -.75rem;
+}
+input{
+    display: none;
+}
+input:checked ~ ul{
+    max-height: 500px;
+}
+input:checked ~ label span{
+    background: transparent;
+}
+input:checked ~ label span:before{
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after{
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after{
+    top: 0;
+}
+@media screen and (min-width: 600px){
+    nav ul{
+        overflow: visible;
+        position: absolute;
+        top: 1.5rem;
+        right: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav li a{
+        display: inline-block;
+    }
+    label span, input{
+        display: none;
+    }
+}
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+#background-head {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -82,17 +201,50 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: var(--white);
+}
+#background-head div{
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+#background-head h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+#background-head p{
+    font-size: 0.8em;
+    line-height: 1.5;
+    padding: 5px;
+}
+
+#background-head input{
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
 
+header{
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+}
+
+img{
+    content: "";
+    
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -107,6 +259,7 @@ table {
     padding: 1rem;
     position: relative;
 }
+
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 50px;

@@ -13,26 +13,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body id="container">
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
     <header>
-        <h1><img 
+        <h1>
+            <img 
             src="images/vanguard-logo.svg"
-            alt="blue Vanguard logo" 
-            width="60" 
-            height="60">Vanguard
+            alt="blue Vanguard logo">Vanguard
         </h1>
-            <ul id="main-nav">
-                <li>About</li>
-                <li>Services</li>
-                <li>Contact</li>
-            </ul>
+            <nav>
+                <h2>Main Navigation</h2>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle"><span></span></label>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
     </header>
     <main>
         <section id="background-head">
-            <h2>Innovation & Investment</h2>
-            <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
-            Request a Consultation
+            <div>
+                <h2>Innovation & Investment</h2>
+                <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
+                <p><input type="submit" value="Request a Consultation"></p>
+            </div>
         </section>
 
         <section id="expertise-description">
