@@ -252,6 +252,7 @@ header{
 #header-container{
     display: flex;
     text-align: center;
+    align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
@@ -261,7 +262,7 @@ header{
     margin-top: 20px;
     margin-left: 8px;
 }
-/*Making the headers animated*/
+/*Making the headers*/
 h2, h3{
     animation: slide 0.7s ease-out forwards;
     opacity: 0;
@@ -274,10 +275,9 @@ h2, h3{
     }
 }
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
-.logo {
+#header-container::before {
     content: "";
-    margin-top: 7px;
-    margin-left: 10px;
+    left: -.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
