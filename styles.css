@@ -52,7 +52,6 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
 /* ROOT VARIABLES */
 :root {
     --blue: #007BFF;
@@ -62,7 +61,6 @@ table {
     --charcoal: #333333;
     --font: "Inter", sans-serif;
 }
-
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 body {
     max-width: 400px;
@@ -76,11 +74,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 *{
     font-family: var(--font);
 }
-
 h1{
     color: var(--blue);
     font-family: var(--font);
@@ -88,14 +84,12 @@ h1{
     font-weight: bold;
 
 }
-
 /*Header Hamburger Icon*/
 nav {
     background-color: var(--black);
     margin-top: 20px;
     overflow: auto;
 }
-
 nav ul{
     width: 100%;
     margin:0;
@@ -120,21 +114,18 @@ nav li a{
     color: var(--blue);
     transition: background-color .3s ease-in;
 }
-
 nav a:hover, nav input:hover{
     background-color: var(--blue);
     color: var(--black);
 }
-
-nav label{
+nav .hamburger-label{
     cursor: pointer;
     display: inline-block;
     padding: 1.5rem;
     user-select: none;
     float: right;
 }
-
-label span{
+.hamburger-label span{
     background-color: var(--white);
     display: block;
     height: .25rem;
@@ -142,8 +133,7 @@ label span{
     transition: background-color .3s ease-out;
     width: 2rem;
 }
-
-label span:before, label span:after{
+.hamburger-label span:before, .hamburger-label span:after{
     background: var(--white);
     content: '';
     display: block;
@@ -152,28 +142,28 @@ label span:before, label span:after{
     transition: all .2s ease-out;
     width: 100%;
 }
-label span:before{
+.hamburger-label span:before{
     top: .75rem;
 }
-label span:after{
+.hamburger-label span:after{
     top: -.75rem;
 }
-input{
+.hamburger-input{
     display: none;
 }
-input:checked ~ ul{
+.hamburger-input:checked ~ ul{
     max-height: 500px;
 }
-input:checked ~ label span{
+.hamburger-input:checked ~ .hamburger-label span{
     background: transparent;
 }
-input:checked ~ label span:before{
+.hamburger-input:checked ~ .hamburger-label span:before{
     transform: rotate(-45deg);
 }
-input:checked ~ label span:after{
+.hamburger-input:checked ~ .hamburger-label span:after{
     transform: rotate(45deg);
 }
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after{
+.hamburger-input:checked ~ .hamburger-label:not(.steps) span:before, .hamburger-input:checked ~ .hamburger-label:not(.steps) span:after{
     top: 0;
 }
 @media screen and (min-width: 600px){
@@ -188,7 +178,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     nav li a{
         display: inline-block;
     }
-    label span, input{
+    .hamburger-label span, .hamburger-input{
         display: none;
     }
 }
@@ -206,19 +196,19 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 #background-head div{
     backdrop-filter: blur(10px);
     padding: 20px;
+    padding-bottom: 0%;
 }
+
 #background-head h2{
     font-size: 1.5em;
     font-weight: bold;
     padding-bottom: 10px;
 }
-
 #background-head p{
     font-size: 0.8em;
     line-height: 1.5;
     padding: 5px;
 }
-
 #background-head input{
     background-color: var(--blue);
     color: var(--white);
@@ -227,24 +217,169 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     border-radius: 10px;
     border-style: none;
 }
-
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
-
 header{
     background-color: var(--black);
     display: flex;
     align-items: center;
     justify-content:space-between;
-
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
 }
-
-img{
+.gradient-overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to top, var(--blue), transparent);
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 2;
+    border-bottom: 3px solid var(--blue);
+}
+.line{
+    position:absolute;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue);
+    z-index: 1;
+}
+#header-container{
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 10px;
+}
+.header-logo{
+    margin-top: 20px;
+    margin-left: 8px;
+}
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+.logo {
     content: "";
-    
-    left:-.5rem;
+    margin-top: 7px;
+    margin-left: 10px;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    animation: float 5s linear infinite;
+}
+@keyframes float{
+    from{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(10px)
+    }
+    to{
+        transform: translateY(-0px);
+    }
+}
+/*Expertise section*/
+#expertise-description h2{
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#expertise-description p{
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#expertise-description{
+    font-family: var(--font);
+}
+/*Offer section*/
+#offers h2{
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#offers h3{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 15px;
+}
+#offers p{
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+#offers{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    padding-bottom: 15px;
+}
+#growth, #impact, #business, #digital, #exclusive, #corporate{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 7px;
+}
+/*Results section*/
+#results{
+    background-color: var(--blue);
+}
+#results h2{
+    color: var(--white);
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 30px;
+    padding-top: 20px;
+}
+#results p{
+    font-size: 0.85rem;
+    color: var(--white);
+    line-height: 1.5;
+    margin: 20px 25px;
+}
+#results h3{
+    color: var(--white);
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 30px;
+    margin-bottom: 10px;
+}
+/*Profits table*/
+#table-container{
+    padding: 35px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--black);
+    color: var(--white);
+}
+th, td{
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+    border: 1px solid var(--charcoal);
+}
+th{
+    background-color: var(--black);
+    color: var(--white);
+}
+tr:nth-child(even){
+    background-color: var(--charcoal);
+}
+tr.gray-line{
+    background-color: var(--charcoal);
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -254,15 +389,18 @@ img{
     justify-content: space-around;
     gap: 1rem;
     height: 300px;
-    width: 100%;
     max-width: 800px;
     padding: 1rem;
     position: relative;
+    padding-bottom: 30px;
+    box-sizing:  border-box;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
-    width: 50px;
+    width: 45px;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
@@ -276,7 +414,7 @@ img{
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: bold;
     color: var(--white);
 }
@@ -292,8 +430,73 @@ img{
 .bar {
     animation: stepUp 1s ease-in-out forwards;
 }
-
-
+/*Contact section*/
+#contact-section{
+    background-color: var(--black);
+    padding-top: 15px;
+    overflow: hidden;
+    padding: 20px;
+}
+#contact-section h2{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--black);
+    margin: 15px;
+    margin-left: 25px;
+}
+#contact-section p{
+    color: var(--white);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 15px;
+}
+/*Contact Form Section*/
+#contact-section label{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+#full, #email-ad, #company, #industry{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--blue);
+    text-align: left;
+    line-height: 1.5;
+}
+#comment-how{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--blue);
+    height: 100px;
+    margin-bottom: 10px;
+}
+#sub-button{
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    padding: 15px;
+    font-weight: bold;
+    border-style: none;
+    font-size: 0.9rem;
+}
+/*Footer Section*/
+footer{
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 30px;
+    padding-top: 0;
+    line-height: 1.3;
+    font-size: 0.9rem;
+}
+footer a{
+    color: var(--blue);
+}
 /* MEDIA QUERIES (MEDIUM) */ 
 
     #results {
@@ -302,6 +505,7 @@ img{
     .results-container {
         flex-direction: row;
         justify-content: space-between;
+        
     }
     .results-table {
         width: 50%;
