@@ -62,13 +62,13 @@ table {
     --font: "Inter", sans-serif;
 }
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 body {
     max-width: 400px;
     margin: 0 auto;
     margin-left: auto;
 }
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -82,7 +82,6 @@ h1{
     font-family: var(--font);
     font-size: 1.75rem;
     font-weight: bold;
-
 }
 /*Header Hamburger Icon*/
 nav {
@@ -198,7 +197,6 @@ nav .hamburger-label{
     padding: 20px;
     padding-bottom: 0%;
 }
-
 #background-head h2{
     font-size: 1.5em;
     font-weight: bold;
@@ -216,6 +214,10 @@ nav .hamburger-label{
     padding: 15px;
     border-radius: 10px;
     border-style: none;
+}
+#background-head input:hover{
+    background-color: var(--red);
+    transform: scale(1.05, 1.05);
 }
 header{
     background-color: var(--black);
@@ -259,6 +261,18 @@ header{
     margin-top: 20px;
     margin-left: 8px;
 }
+/*Making the headers animated*/
+h2, h3{
+    animation: slide 0.7s ease-out forwards;
+    opacity: 0;
+    transform: translateY(15px);
+}
+@keyframes slide{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 .logo {
     content: "";
@@ -288,6 +302,7 @@ header{
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
 #expertise-description p{
     font-size: 0.85rem;
     font-weight: 500;
@@ -306,6 +321,9 @@ header{
     margin: 30px;
     margin-left: 20px;
     margin-bottom: 20px;
+    animation: slide 0.7s ease-out forwards;
+    opacity: 0;
+    transform: translateY(15px);
 }
 #offers h3{
     font-size: 1.1rem;
@@ -328,6 +346,10 @@ header{
     border-radius: 10px;
     padding: 15px;
     margin: 7px;
+    transition: transform 0.3s ease-out;
+}
+#growth:hover, #impact:hover, #business:hover, #digital:hover, #exclusive:hover, #corporate:hover{
+    transform: translateY(-10px);
 }
 /*Results section*/
 #results{
@@ -397,14 +419,13 @@ tr.gray-line{
     padding-left: 30px;
     padding-right: 30px;
 }
-
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 45px;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 0.5s ease-in-out;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -427,7 +448,7 @@ tr.gray-line{
     }
 }
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
+.bar{
     animation: stepUp 1s ease-in-out forwards;
 }
 /*Contact section*/
@@ -483,6 +504,10 @@ tr.gray-line{
     font-weight: bold;
     border-style: none;
     font-size: 0.9rem;
+}
+#sub-button:hover{
+    background-color: var(--red);
+    transform: scale(1.05, 1.05);
 }
 /*Footer Section*/
 footer{
