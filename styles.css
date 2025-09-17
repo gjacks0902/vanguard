@@ -257,6 +257,7 @@ header{
     margin-bottom: 10px;
     position: relative;
     padding: 10px;
+    width: 100%;
 }
 .header-logo{
     margin-top: 20px;
@@ -523,9 +524,57 @@ footer a{
     color: var(--blue);
 }
 /* MEDIA QUERIES (MEDIUM) */ 
-
-    #results {
+@media (min-width: 800px){
+    body {
+        max-width: 800px;
+    }
+    h1{
+        position: relative;
+        bottom: 25px;
+        left: 5px;
+    }
+    #hamburger-list{
+        width: 50%;
+        padding-right: 15px;
+        top: 4px;
+    }
+    #header-container::before{
+        bottom: 10px;
+        left: 5px;
+        position: relative;
+    }
+    #offer-cards{
+        display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+    } 
+
+    .two-columns{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "#table-container #second-section";
+        padding: 15px;
+        padding-top: 0;
+    }
+    #table-container h3{
+        bottom: 12px;
+        position: relative;
+    }
+    #second-section h3{
+        position: relative;
+        top: 10px;
+    }
+    #results p{
+        margin-bottom: 0;
+    }
+    /*
+    #results {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        
     }
     .results-container {
         flex-direction: row;
@@ -538,6 +587,6 @@ footer a{
     .bar-chart {
         width: 50%;
     }
-
-
+        */
+}
 /* MEDIA QUERIES (LARGE) */
