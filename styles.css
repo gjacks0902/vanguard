@@ -165,7 +165,7 @@ nav .hamburger-label{
 .hamburger-input:checked ~ .hamburger-label:not(.steps) span:before, .hamburger-input:checked ~ .hamburger-label:not(.steps) span:after{
     top: 0;
 }
-@media screen and (min-width: 600px){
+@media screen and (min-width: 800px){
     nav ul{
         overflow: visible;
         position: absolute;
@@ -263,7 +263,7 @@ header{
     margin-top: 20px;
     margin-left: 8px;
 }
-/*Making the headers*/
+/*Making the headers animated*/
 h2, h3{
     animation: slide 0.7s ease-out forwards;
     opacity: 0;
@@ -524,6 +524,7 @@ footer a{
     color: var(--blue);
 }
 /* MEDIA QUERIES (MEDIUM) */ 
+
 @media (min-width: 800px){
     body {
         max-width: 800px;
@@ -590,3 +591,21 @@ footer a{
         */
 }
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1024px){
+    body{
+        max-width: 1024px;
+    }
+    #contact-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "#full #email-ad"
+        "#company #industry"
+        "#comment-how #submit";
+    }
+    #contact-section p{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
