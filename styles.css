@@ -130,6 +130,7 @@ nav .hamburger-label{
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
+    
 }
 .hamburger-label span:before, .hamburger-label span:after{
     background: var(--white);
