@@ -9,19 +9,87 @@
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -29,29 +97,49 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 /* ROOT VARIABLES */
 :root {
     --blue: #007BFF;
@@ -61,6 +149,7 @@ table {
     --charcoal: #333333;
     --font: "Inter", sans-serif;
 }
+
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -68,40 +157,47 @@ body {
     margin: 0 auto;
     margin-left: auto;
 }
+
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
-*{
+
+* {
     font-family: var(--font);
 }
-h1{
+
+h1 {
     color: var(--blue);
     font-family: var(--font);
     font-size: 1.75rem;
     font-weight: bold;
 }
+
 /*Header Hamburger Icon*/
 nav {
     background-color: var(--black);
     margin-top: 20px;
     overflow: auto;
 }
-nav ul{
+
+nav ul {
     width: 100%;
-    margin:0;
+    margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
     text-align: center;
     max-height: 0;
 }
-nav h2{
+
+nav h2 {
     visibility: hidden;
     height: 1px;
 }
-nav li a{
+
+nav li a {
     display: block;
     font-family: var(--font);
     font-size: 1.5rem;
@@ -112,27 +208,33 @@ nav li a{
     color: var(--blue);
     transition: background-color .3s ease-in;
 }
-nav a:hover, nav input:hover{
+
+nav a:hover,
+nav input:hover {
     background-color: var(--blue);
     color: var(--black);
 }
-nav .hamburger-label{
+
+nav .hamburger-label {
     cursor: pointer;
     display: inline-block;
     padding: 1.5rem;
     user-select: none;
     float: right;
 }
-.hamburger-label span{
+
+.hamburger-label span {
     background-color: var(--white);
     display: block;
     height: .25rem;
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
-    
+
 }
-.hamburger-label span:before, .hamburger-label span:after{
+
+.hamburger-label span:before,
+.hamburger-label span:after {
     background: var(--white);
     content: '';
     display: block;
@@ -141,32 +243,42 @@ nav .hamburger-label{
     transition: all .2s ease-out;
     width: 100%;
 }
-.hamburger-label span:before{
+
+.hamburger-label span:before {
     top: .75rem;
 }
-.hamburger-label span:after{
+
+.hamburger-label span:after {
     top: -.75rem;
 }
-.hamburger-input{
+
+.hamburger-input {
     display: none;
 }
-.hamburger-input:checked ~ ul{
+
+.hamburger-input:checked~ul {
     max-height: 500px;
 }
-.hamburger-input:checked ~ .hamburger-label span{
+
+.hamburger-input:checked~.hamburger-label span {
     background: transparent;
 }
-.hamburger-input:checked ~ .hamburger-label span:before{
+
+.hamburger-input:checked~.hamburger-label span:before {
     transform: rotate(-45deg);
 }
-.hamburger-input:checked ~ .hamburger-label span:after{
+
+.hamburger-input:checked~.hamburger-label span:after {
     transform: rotate(45deg);
 }
-.hamburger-input:checked ~ .hamburger-label:not(.steps) span:before, .hamburger-input:checked ~ .hamburger-label:not(.steps) span:after{
+
+.hamburger-input:checked~.hamburger-label:not(.steps) span:before,
+.hamburger-input:checked~.hamburger-label:not(.steps) span:after {
     top: 0;
 }
-@media screen and (min-width: 800px){
-    nav ul{
+
+@media screen and (min-width: 800px) {
+    nav ul {
         overflow: visible;
         position: absolute;
         top: 1.5rem;
@@ -174,13 +286,17 @@ nav .hamburger-label{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    nav li a{
+
+    nav li a {
         display: inline-block;
     }
-    .hamburger-label span, .hamburger-input{
+
+    .hamburger-label span,
+    .hamburger-input {
         display: none;
     }
 }
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #background-head {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
@@ -193,23 +309,29 @@ nav .hamburger-label{
     font-family: var(--font);
     background-size: cover;
     position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
-#background-head div{
+
+#background-head div {
     backdrop-filter: blur(10px);
     padding: 20px;
     padding-bottom: 0%;
 }
-#background-head h2{
+
+#background-head h2 {
     font-size: 1.5em;
     font-weight: bold;
     padding-bottom: 10px;
 }
-#background-head p{
+
+#background-head p {
     font-size: 0.8em;
     line-height: 1.5;
     padding: 5px;
 }
-#background-head input{
+
+#background-head input {
     background-color: var(--blue);
     color: var(--white);
     font-weight: bold;
@@ -217,21 +339,24 @@ nav .hamburger-label{
     border-radius: 10px;
     border-style: none;
 }
-#background-head input:hover{
+
+#background-head input:hover {
     background-color: var(--red);
     transform: scale(1.05, 1.05);
 }
-header{
+
+header {
     background-color: var(--black);
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     height: auto;
     box-sizing: border-box;
     position: relative;
     z-index: 3;
 }
-.gradient-overlay{
+
+.gradient-overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -242,7 +367,8 @@ header{
     z-index: 2;
     border-bottom: 3px solid var(--blue);
 }
-.line{
+
+.line {
     position: absolute;
     bottom: 4px;
     width: 100%;
@@ -250,7 +376,8 @@ header{
     background-color: var(--blue);
     z-index: 1;
 }
-#header-container{
+
+#header-container {
     display: flex;
     text-align: center;
     align-items: center;
@@ -260,22 +387,27 @@ header{
     padding: 10px;
     width: 100%;
 }
-.header-logo{
+
+.header-logo {
     margin-top: 20px;
     margin-left: 8px;
 }
+
 /*Making the headers animated*/
-h2, h3{
+h2,
+h3 {
     animation: slide 0.7s ease-out forwards;
     opacity: 0;
     transform: translateY(15px);
 }
-@keyframes slide{
-    to{
+
+@keyframes slide {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 #header-container::before {
     content: "";
@@ -285,19 +417,23 @@ h2, h3{
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
     animation: float 5s linear infinite;
 }
-@keyframes float{
-    from{
+
+@keyframes float {
+    from {
         transform: translateY(0px);
     }
-    50%{
+
+    50% {
         transform: translateY(10px)
     }
-    to{
+
+    to {
         transform: translateY(-0px);
     }
 }
+
 /*Expertise section*/
-#expertise-description h2{
+#expertise-description h2 {
     font-size: 1.75rem;
     font-weight: bold;
     margin: 30px;
@@ -305,7 +441,7 @@ h2, h3{
     margin-bottom: 20px;
 }
 
-#expertise-description p{
+#expertise-description p {
     font-size: 0.85rem;
     font-weight: 500;
     line-height: 1.5;
@@ -313,11 +449,13 @@ h2, h3{
     margin-right: 10px;
     margin-bottom: 10px;
 }
-#expertise-description{
+
+#expertise-description {
     font-family: var(--font);
 }
+
 /*Offer section*/
-#offers h2{
+#offers h2 {
     font-size: 1.75rem;
     font-weight: bold;
     margin: 30px;
@@ -327,22 +465,31 @@ h2, h3{
     opacity: 0;
     transform: translateY(15px);
 }
-#offers h3{
+
+#offers h3 {
     font-size: 1.1rem;
     font-weight: bold;
     margin: 15px;
 }
-#offers p{
+
+#offers p {
     font-size: 0.85rem;
     line-height: 1.5;
 }
-#offers{
+
+#offers {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
     padding-bottom: 15px;
 }
-#growth, #impact, #business, #digital, #exclusive, #corporate{
+
+#growth,
+#impact,
+#business,
+#digital,
+#exclusive,
+#corporate {
     background-color: var(--blue);
     color: var(--white);
     border-radius: 10px;
@@ -350,61 +497,79 @@ h2, h3{
     margin: 7px;
     transition: transform 0.3s ease-out;
 }
-#growth:hover, #impact:hover, #business:hover, #digital:hover, #exclusive:hover, #corporate:hover{
+
+#growth:hover,
+#impact:hover,
+#business:hover,
+#digital:hover,
+#exclusive:hover,
+#corporate:hover {
     transform: translateY(-10px);
 }
+
 /*Results section*/
-#results{
+#results {
     background-color: var(--blue);
 }
-#results h2{
+
+#results h2 {
     color: var(--white);
     font-size: 1.75rem;
     font-weight: bold;
     margin: 30px;
     padding-top: 20px;
 }
-#results p{
+
+#results p {
     font-size: 0.85rem;
     color: var(--white);
     line-height: 1.5;
     margin: 20px 25px;
 }
-#results h3{
+
+#results h3 {
     color: var(--white);
     font-size: 1.7rem;
     font-weight: bold;
     margin: 30px;
     margin-bottom: 10px;
 }
+
 /*Profits table*/
-#table-container{
+#table-container {
     padding: 35px;
     padding-top: 20px;
     padding-bottom: 5px;
 }
-table{
+
+table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--black);
     color: var(--white);
 }
-th, td{
+
+th,
+td {
     padding: 15px;
     text-align: center;
     font-size: 0.8rem;
     border: 1px solid var(--charcoal);
 }
-th{
+
+th {
     background-color: var(--black);
     color: var(--white);
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background-color: var(--charcoal);
 }
-tr.gray-line{
+
+tr.gray-line {
     background-color: var(--charcoal);
 }
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -417,10 +582,11 @@ tr.gray-line{
     padding: 1rem;
     position: relative;
     padding-bottom: 30px;
-    box-sizing:  border-box;
+    box-sizing: border-box;
     padding-left: 30px;
     padding-right: 30px;
 }
+
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 45px;
@@ -430,6 +596,7 @@ tr.gray-line{
     transition: height 0.5s ease-in-out;
     height: 0;
 }
+
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
     content: attr(data-year);
@@ -441,26 +608,31 @@ tr.gray-line{
     font-weight: bold;
     color: var(--white);
 }
+
 @keyframes stepUp {
     0% {
         height: 0;
     }
+
     100% {
         height: var(--height);
     }
 }
+
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar{
+.bar {
     animation: stepUp 1s ease-in-out forwards;
 }
+
 /*Contact section*/
-#contact-section{
+#contact-section {
     background-color: var(--black);
     padding-top: 15px;
     overflow: hidden;
     padding: 20px;
 }
-#contact-section h2{
+
+#contact-section h2 {
     font-size: 1.75rem;
     font-weight: bold;
     color: var(--white);
@@ -468,19 +640,25 @@ tr.gray-line{
     margin: 15px;
     margin-left: 25px;
 }
-#contact-section p{
+
+#contact-section p {
     color: var(--white);
     font-size: 0.8rem;
     line-height: 1.5;
     margin: 15px;
 }
+
 /*Contact Form Section*/
-#contact-section label{
+#contact-section label {
     display: inline-block;
     width: 100%;
     text-align: left;
 }
-#full, #email-ad, #company, #industry{
+
+#full,
+#email-ad,
+#company,
+#industry {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -488,7 +666,8 @@ tr.gray-line{
     text-align: left;
     line-height: 1.5;
 }
-#comment-how{
+
+#comment-how {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -496,7 +675,8 @@ tr.gray-line{
     height: 100px;
     margin-bottom: 10px;
 }
-#sub-button{
+
+#sub-button {
     width: 100%;
     background-color: var(--blue);
     border-radius: 10px;
@@ -507,12 +687,14 @@ tr.gray-line{
     border-style: none;
     font-size: 0.9rem;
 }
-#sub-button:hover{
+
+#sub-button:hover {
     background-color: var(--red);
     transform: scale(1.05, 1.05);
 }
+
 /*Footer Section*/
-footer{
+footer {
     background-color: var(--black);
     color: var(--white);
     text-align: center;
@@ -521,72 +703,93 @@ footer{
     line-height: 1.3;
     font-size: 0.9rem;
 }
-footer a{
+
+footer a {
     color: var(--blue);
 }
-/* MEDIA QUERIES (MEDIUM) */ 
 
-@media (min-width: 800px){
+/* MEDIA QUERIES (MEDIUM) */
+
+@media (min-width: 800px) {
     body {
-        max-width: 800px;
+        
     }
-    h1{
+
+    #background-head{
+        width: 100vi;
+        background-repeat: no-repeat;
+        background-size: 100vw;
+        background-position: center center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
         position: relative;
         bottom: 25px;
         left: 5px;
     }
-    #hamburger-list{
+
+    #hamburger-list {
         width: 50%;
         padding-right: 15px;
         top: 4px;
     }
-    #header-container::before{
+
+    #header-container::before {
         bottom: 10px;
         left: 5px;
         position: relative;
     }
-    #offer-cards{
+
+    #offer-cards {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
         gap: 10px;
-    } 
-    .two-columns{
+    }
+
+    .two-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-        "#table-container #second-section";
+        grid-template-areas:
+            "#table-container #second-section";
         padding: 15px;
         padding-top: 0;
     }
-    #table-container h3{
+
+    #table-container h3 {
         bottom: 12px;
         position: relative;
     }
-    #second-section h3{
+
+    #second-section h3 {
         position: relative;
         top: 10px;
     }
-    #results p{
+
+    #results p {
         margin-bottom: 0;
     }
 }
+
 /* MEDIA QUERIES (LARGE) */
-@media (min-width: 1024px){
-    body{
-        max-width: 1024px;
-        margin: 0 auto;
+@media (min-width: 1024px) {
+    body {
+        
     }
-    #contact-grid{
+
+    #contact-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
-        grid-template-areas: 
-        "#full #email-ad"
-        "#company #industry"
-        "#comment-how #submit";
+        grid-template-areas:
+            "#full #email-ad"
+            "#company #industry"
+            "#comment-how #submit";
     }
-    #contact-section p{
+
+    #contact-section p {
         margin-left: 20px;
         margin-right: 20px;
     }
