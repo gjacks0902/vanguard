@@ -3,7 +3,6 @@
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS"*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
@@ -97,7 +96,6 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -112,21 +110,17 @@ nav,
 section {
     display: block;
 }
-
 body {
     line-height: 1;
 }
-
 ol,
 ul {
     list-style: none;
 }
-
 blockquote,
 q {
     quotes: none;
 }
-
 blockquote:before,
 blockquote:after,
 q:before,
@@ -134,12 +128,10 @@ q:after {
     content: '';
     content: none;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
 /* ROOT VARIABLES */
 :root {
     --blue: #007BFF;
@@ -149,7 +141,6 @@ table {
     --charcoal: #333333;
     --font: "Inter", sans-serif;
 }
-
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -157,31 +148,26 @@ body {
     margin: 0 auto;
     margin-left: auto;
 }
-
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 * {
     font-family: var(--font);
 }
-
 h1 {
     color: var(--blue);
     font-family: var(--font);
     font-size: 1.75rem;
     font-weight: bold;
 }
-
 /*Header Hamburger Icon*/
 nav {
     background-color: var(--black);
     margin-top: 20px;
     overflow: auto;
 }
-
 nav ul {
     width: 100%;
     margin: 0;
@@ -190,13 +176,13 @@ nav ul {
     overflow: hidden;
     text-align: center;
     max-height: 0;
+    display: flex;
+    flex-direction: column;
 }
-
 nav h2 {
     visibility: hidden;
     height: 1px;
 }
-
 nav li a {
     display: block;
     font-family: var(--font);
@@ -208,13 +194,11 @@ nav li a {
     color: var(--blue);
     transition: background-color .3s ease-in;
 }
-
 nav a:hover,
 nav input:hover {
     background-color: var(--blue);
     color: var(--black);
 }
-
 nav .hamburger-label {
     cursor: pointer;
     display: inline-block;
@@ -222,7 +206,6 @@ nav .hamburger-label {
     user-select: none;
     float: right;
 }
-
 .hamburger-label span {
     background-color: var(--white);
     display: block;
@@ -230,9 +213,7 @@ nav .hamburger-label {
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
-
 }
-
 .hamburger-label span:before,
 .hamburger-label span:after {
     background: var(--white);
@@ -243,40 +224,31 @@ nav .hamburger-label {
     transition: all .2s ease-out;
     width: 100%;
 }
-
 .hamburger-label span:before {
     top: .75rem;
 }
-
 .hamburger-label span:after {
     top: -.75rem;
 }
-
 .hamburger-input {
     display: none;
 }
-
 .hamburger-input:checked~ul {
     max-height: 500px;
 }
-
 .hamburger-input:checked~.hamburger-label span {
     background: transparent;
 }
-
 .hamburger-input:checked~.hamburger-label span:before {
     transform: rotate(-45deg);
 }
-
 .hamburger-input:checked~.hamburger-label span:after {
     transform: rotate(45deg);
 }
-
 .hamburger-input:checked~.hamburger-label:not(.steps) span:before,
 .hamburger-input:checked~.hamburger-label:not(.steps) span:after {
     top: 0;
 }
-
 @media screen and (min-width: 800px) {
     nav ul {
         overflow: visible;
@@ -286,17 +258,14 @@ nav .hamburger-label {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-
     nav li a {
         display: inline-block;
     }
-
     .hamburger-label span,
     .hamburger-input {
         display: none;
     }
 }
-
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #background-head {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
@@ -309,28 +278,22 @@ nav .hamburger-label {
     font-family: var(--font);
     background-size: cover;
     position: relative;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
-
 #background-head div {
     backdrop-filter: blur(10px);
     padding: 20px;
     padding-bottom: 0%;
 }
-
 #background-head h2 {
     font-size: 1.5em;
     font-weight: bold;
     padding-bottom: 10px;
 }
-
 #background-head p {
     font-size: 0.8em;
     line-height: 1.5;
     padding: 5px;
 }
-
 #background-head input {
     background-color: var(--blue);
     color: var(--white);
@@ -339,12 +302,10 @@ nav .hamburger-label {
     border-radius: 10px;
     border-style: none;
 }
-
 #background-head input:hover {
     background-color: var(--red);
     transform: scale(1.05, 1.05);
 }
-
 header {
     background-color: var(--black);
     display: flex;
@@ -355,7 +316,6 @@ header {
     position: relative;
     z-index: 3;
 }
-
 .gradient-overlay {
     position: absolute;
     bottom: 0;
@@ -367,7 +327,6 @@ header {
     z-index: 2;
     border-bottom: 3px solid var(--blue);
 }
-
 .line {
     position: absolute;
     bottom: 4px;
@@ -376,7 +335,6 @@ header {
     background-color: var(--blue);
     z-index: 1;
 }
-
 #header-container {
     display: flex;
     text-align: center;
@@ -385,14 +343,18 @@ header {
     margin-bottom: 10px;
     position: relative;
     padding: 10px;
-    width: 100%;
+    width: 100vw;
+    justify-content: flex-end;
+    min-height: 80px;
 }
-
 .header-logo {
     margin-top: 20px;
     margin-left: 8px;
+    display: flex;
+    left: 90px;
+    position: absolute;
+    align-items: center;
 }
-
 /*Making the headers animated*/
 h2,
 h3 {
@@ -400,24 +362,23 @@ h3 {
     opacity: 0;
     transform: translateY(15px);
 }
-
 @keyframes slide {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 #header-container::before {
     content: "";
-    left: -.5rem;
+    left: 1.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
     animation: float 5s linear infinite;
+    position: absolute;
+    
 }
-
 @keyframes float {
     from {
         transform: translateY(0px);
@@ -431,7 +392,6 @@ h3 {
         transform: translateY(-0px);
     }
 }
-
 /*Expertise section*/
 #expertise-description h2 {
     font-size: 1.75rem;
@@ -440,7 +400,6 @@ h3 {
     margin-left: 20px;
     margin-bottom: 20px;
 }
-
 #expertise-description p {
     font-size: 0.85rem;
     font-weight: 500;
@@ -449,11 +408,9 @@ h3 {
     margin-right: 10px;
     margin-bottom: 10px;
 }
-
 #expertise-description {
     font-family: var(--font);
 }
-
 /*Offer section*/
 #offers h2 {
     font-size: 1.75rem;
@@ -465,25 +422,21 @@ h3 {
     opacity: 0;
     transform: translateY(15px);
 }
-
 #offers h3 {
     font-size: 1.1rem;
     font-weight: bold;
     margin: 15px;
 }
-
 #offers p {
     font-size: 0.85rem;
     line-height: 1.5;
 }
-
 #offers {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
     padding-bottom: 15px;
 }
-
 #growth,
 #impact,
 #business,
@@ -497,7 +450,6 @@ h3 {
     margin: 7px;
     transition: transform 0.3s ease-out;
 }
-
 #growth:hover,
 #impact:hover,
 #business:hover,
@@ -506,12 +458,10 @@ h3 {
 #corporate:hover {
     transform: translateY(-10px);
 }
-
 /*Results section*/
 #results {
     background-color: var(--blue);
 }
-
 #results h2 {
     color: var(--white);
     font-size: 1.75rem;
@@ -519,14 +469,12 @@ h3 {
     margin: 30px;
     padding-top: 20px;
 }
-
 #results p {
     font-size: 0.85rem;
     color: var(--white);
     line-height: 1.5;
     margin: 20px 25px;
 }
-
 #results h3 {
     color: var(--white);
     font-size: 1.7rem;
@@ -534,21 +482,18 @@ h3 {
     margin: 30px;
     margin-bottom: 10px;
 }
-
 /*Profits table*/
 #table-container {
     padding: 35px;
     padding-top: 20px;
     padding-bottom: 5px;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--black);
     color: var(--white);
 }
-
 th,
 td {
     padding: 15px;
@@ -556,20 +501,16 @@ td {
     font-size: 0.8rem;
     border: 1px solid var(--charcoal);
 }
-
 th {
     background-color: var(--black);
     color: var(--white);
 }
-
 tr:nth-child(even) {
     background-color: var(--charcoal);
 }
-
 tr.gray-line {
     background-color: var(--charcoal);
 }
-
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -586,7 +527,6 @@ tr.gray-line {
     padding-left: 30px;
     padding-right: 30px;
 }
-
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 45px;
@@ -596,7 +536,6 @@ tr.gray-line {
     transition: height 0.5s ease-in-out;
     height: 0;
 }
-
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
     content: attr(data-year);
@@ -608,7 +547,6 @@ tr.gray-line {
     font-weight: bold;
     color: var(--white);
 }
-
 @keyframes stepUp {
     0% {
         height: 0;
@@ -618,12 +556,10 @@ tr.gray-line {
         height: var(--height);
     }
 }
-
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
 .bar {
     animation: stepUp 1s ease-in-out forwards;
 }
-
 /*Contact section*/
 #contact-section {
     background-color: var(--black);
@@ -631,7 +567,6 @@ tr.gray-line {
     overflow: hidden;
     padding: 20px;
 }
-
 #contact-section h2 {
     font-size: 1.75rem;
     font-weight: bold;
@@ -640,21 +575,18 @@ tr.gray-line {
     margin: 15px;
     margin-left: 25px;
 }
-
 #contact-section p {
     color: var(--white);
     font-size: 0.8rem;
     line-height: 1.5;
     margin: 15px;
 }
-
 /*Contact Form Section*/
 #contact-section label {
     display: inline-block;
     width: 100%;
     text-align: left;
 }
-
 #full,
 #email-ad,
 #company,
@@ -666,7 +598,6 @@ tr.gray-line {
     text-align: left;
     line-height: 1.5;
 }
-
 #comment-how {
     box-sizing: border-box;
     width: 100%;
@@ -675,7 +606,6 @@ tr.gray-line {
     height: 100px;
     margin-bottom: 10px;
 }
-
 #sub-button {
     width: 100%;
     background-color: var(--blue);
@@ -687,12 +617,10 @@ tr.gray-line {
     border-style: none;
     font-size: 0.9rem;
 }
-
 #sub-button:hover {
     background-color: var(--red);
     transform: scale(1.05, 1.05);
 }
-
 /*Footer Section*/
 footer {
     background-color: var(--black);
@@ -703,24 +631,15 @@ footer {
     line-height: 1.3;
     font-size: 0.9rem;
 }
-
 footer a {
     color: var(--blue);
 }
-
 /* MEDIA QUERIES (MEDIUM) */
-
 @media (min-width: 800px) {
-    body {
-        
-    }
-
     #background-head{
-        width: 100vi;
-        background-repeat: no-repeat;
-        background-size: 100vw;
+        width: 100vw;
+        background-size: cover;
         background-position: center center;
-        background-attachment: fixed;
         margin: 0;
         padding: 0;
     }
@@ -735,20 +654,17 @@ footer a {
         padding-right: 15px;
         top: 4px;
     }
-
     #header-container::before {
-        bottom: 10px;
-        left: 5px;
-        position: relative;
+        bottom: 1rem;
+        left: 1rem;
+        position: absolute;
     }
-
     #offer-cards {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
         gap: 10px;
     }
-
     .two-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -757,28 +673,20 @@ footer a {
         padding: 15px;
         padding-top: 0;
     }
-
     #table-container h3 {
         bottom: 12px;
         position: relative;
     }
-
     #second-section h3 {
         position: relative;
         top: 10px;
     }
-
     #results p {
         margin-bottom: 0;
     }
 }
-
 /* MEDIA QUERIES (LARGE) */
 @media (min-width: 1024px) {
-    body {
-        
-    }
-
     #contact-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -788,10 +696,8 @@ footer a {
             "#company #industry"
             "#comment-how #submit";
     }
-
     #contact-section p {
         margin-left: 20px;
         margin-right: 20px;
     }
-
 }
